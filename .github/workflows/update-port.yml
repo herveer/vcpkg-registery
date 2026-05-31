@@ -95,7 +95,11 @@ jobs:
         if: steps.check.outputs.needed == 'true'
         run: |
           sed -i "s|SHA512 .*|SHA512 ${{ steps.sha.outputs.sha512 }}|" "ports/${{ inputs.port-name }}/portfile.cmake"
-          jq --arg v "${{ steps.latest.outputs.version }}" '.version = $v' "ports/${{ inputs.port-name }}/vcpkg.json" > tmp.json && mv tmp.json "ports/${{ inputs.port-name }}/vcpkg.json"
+          # Set the new version and drop any stale "port-version": a brand-new upstream
+          # version must start at port-version 0. If it is left over from the previous
+          # release, x-add-version refuses to add the entry to versions/*/<port>.json
+          # (it only updates the baseline), leaving the version database out of sync.
+          jq --arg v "${{ steps.latest.outputs.version }}" '.version = $v | del(."port-version")' "ports/${{ inputs.port-name }}/vcpkg.json" > tmp.json && mv tmp.json "ports/${{ inputs.port-name }}/vcpkg.json"
 
       - name: Setup vcpkg
         if: steps.check.outputs.needed == 'true'
