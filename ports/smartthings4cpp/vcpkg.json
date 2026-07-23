@@ -1,0 +1,21 @@
+{
+  "name": "smartthings4cpp",
+  "version": "1.0.0",
+  "description": "A modern, lightweight C++ library providing a developer-friendly interface to the Samsung SmartThings public API. Features token authentication, device discovery, typed device control, reactive properties, automatic polling updates, and OAuth2 push events.",
+  "homepage": "https://github.com/herveer/smartthings4cpp",
+  "license": "MIT",
+  "dependencies": [
+    "cpp-httplib",
+    "cpr",
+    "nlohmann-json",
+    "reactivelitepp",
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
+}
