@@ -1,0 +1,8 @@
+smartthings4cpp provides CMake targets:
+
+    find_package(smartthings4cpp CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE smartthings4cpp::smartthings4cpp)
+
+smartthings4cpp is a C++17 library for the Samsung SmartThings API.
+
+For examples, see: https://github.com/herveer/smartthings4cpp
