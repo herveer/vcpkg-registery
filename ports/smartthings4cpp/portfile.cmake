@@ -1,8 +1,12 @@
+# The library exports no symbols (no dllexport / WINDOWS_EXPORT_ALL_SYMBOLS),
+# so a DLL build would have no import library: always build it static.
+vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
+
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO herveer/smartthings4cpp
     REF "v${VERSION}"
-    SHA512 36d23269662448d871e028b388cc163e53efb91ef44ec1c98cb0bb885ceeabc6b71c89b6db7bb8bbd6038e89b58b8b899bf47a79a153266ecc3b2128ceaa2751
+    SHA512 1f47b009a2f04c6eadb2bb4b8e59711be925ba0c05cc8babe53007f5445d135164cb8c0c7f2aa26c047cfea9606fc2cc7a0b25b4637eabe25d2f2bfa823843c2
     HEAD_REF main
 )
 
