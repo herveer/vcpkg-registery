@@ -1,8 +1,8 @@
 {
   "name": "reactivelitepp",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "ReactiveLitepp provides a type-safe implementation of reactive programming patterns inspired by .NET's `INotifyPropertyChanged` interface. Build responsive applications with automatic property change notifications, event-driven architectures, and observable objects.",
-  "homepage": "https://github.com/herve-er/ReactiveLitepp",
+  "homepage": "https://github.com/herveer/ReactiveLitepp",
   "license": "MIT",
   "dependencies": [
     "nameof",
